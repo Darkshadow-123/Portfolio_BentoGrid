@@ -1,22 +1,22 @@
 import React from "react";
-import {ProjectsSection} from "@/components/ProjectsSection";
-import Description from "../components/Description";
-import ProfilePicture from "../components/ProfilePicture";
-import LeetcodeSection from "../components/LeetcodeSection";
-import SkillsSection from "../components/SkillsSection";
-import LinksSection from "../components/LinksSection";
-import ContactSection from "../components/ContactSection";
+import {Description} from "../components/Description";
+import {ProfilePicture} from "../components/ProfilePicture";
+import {LeetcodeSection} from "../components/LeetcodeSection";
+import {SkillsSection} from "../components/SkillsSection";
+import {LinksSection} from "../components/LinksSection";
+import { ContactSection } from "../components/ContactSection";
+import {ProjectsSection} from "../components/ProjectsSection";
 
 function Home() {
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center p-6">
+    <div className="min-h-screen w-full p-6">
       <div className="grid h-full w-full grid-cols-10 grid-rows-5 gap-4">
         
         {/* Project Section */}
         <div className="col-span-4 row-span-3 rounded-3xl bg-orange-400 flex items-center justify-center">
-          <ProjectsSection />
+          <ProjectsSection/>
         </div>
-
+        
         {/* Description */}
         <div className="col-span-5 row-span-1 rounded-3xl bg-orange-400 flex items-center justify-center">
           <Description />
@@ -46,6 +46,7 @@ function Home() {
         <div className="col-span-6 row-span-2 rounded-3xl bg-orange-400 flex items-center justify-center">
           <ContactSection />
         </div>
+
 
       </div>
     </div>
