@@ -120,10 +120,7 @@ export function LeetcodeSection() {
                   : 'opacity-0 transform translate-x-full'
               }`}
             >
-              <div className={`p-3 rounded-full ${slide.bgColor} mb-3`}>
-                <SlideIcon className={`h-8 w-8 ${slide.textColor}`} />
-              </div>
-              <p className={`text-sm ${slide.textColor} mb-1`}>{slide.label}</p>
+              <p className={`text-lg ${slide.textColor} mb-0`}>{slide.label}</p>
               <p className="text-3xl font-bold">{slide.value}</p>
             </div>
           );
