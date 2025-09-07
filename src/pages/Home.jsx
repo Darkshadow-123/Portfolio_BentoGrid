@@ -12,19 +12,19 @@ import { ParticleCard } from "../components/MagicBento";
 
 function Home() {
   const glowColor = "132, 0, 255";
-  const particleCount = 12;
+  const particleCount = 24;
   
   return (
     <div className="min-h-screen w-full p-6">
       <MagicBento
         textAutoHide={true}
-        enableStars={false} // We'll handle particles individually
+        enableStars={true} // We'll handle particles individually
         enableSpotlight={true}
         enableBorderGlow={true}
         enableTilt={true}
         enableMagnetism={true}
         clickEffect={true}
-        spotlightRadius={300}
+        spotlightRadius={550}
         particleCount={particleCount}
         glowColor={glowColor}
       >
