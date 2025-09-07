@@ -30,17 +30,7 @@ function Home() {
       >
         <div className="grid h-full w-full grid-cols-10 grid-rows-5 gap-4">
           
-          {/* Project Section */}
-          <ParticleCard
-            className="col-span-4 row-span-3 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
-            particleCount={particleCount}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-            <ProjectsSection/>
-          </ParticleCard>
+
           
           {/* Profile Picture */}
           <ParticleCard
@@ -56,7 +46,7 @@ function Home() {
 
           {/* Description */}
           <ParticleCard
-            className="col-span-5 row-span-1 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+            className="col-span-6 row-span-1 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
             particleCount={particleCount}
             glowColor={glowColor}
             enableTilt={true}
@@ -68,7 +58,7 @@ function Home() {
 
           {/* Leetcode Section */}
           <ParticleCard
-            className="col-span-2 row-span-2 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+            className="col-span-3 row-span-1 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
             particleCount={10}
             glowColor={glowColor}
             enableTilt={true}
@@ -76,6 +66,20 @@ function Home() {
             enableMagnetism={true}
           >
             <LeetcodeSection />
+          </ParticleCard>
+
+
+
+          {/* Project Section */}
+          <ParticleCard
+            className="col-span-6 row-span-2 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+            particleCount={particleCount}
+            glowColor={glowColor}
+            enableTilt={true}
+            clickEffect={true}
+            enableMagnetism={true}
+          >
+            <ProjectsSection/>
           </ParticleCard>
 
           {/* Tech Stack */}
