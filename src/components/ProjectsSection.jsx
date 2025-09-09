@@ -38,19 +38,29 @@ const DEFAULT_ITEMS = [
 
 const DRAG_BUFFER = 0;
 const VELOCITY_THRESHOLD = 500;
-const GAP = 16;
+const GAP = 480;
 const SPRING_OPTIONS = { type: 'spring', stiffness: 300, damping: 30 };
+
 export function ProjectsSection({
   items = DEFAULT_ITEMS,
-  baseWidth = 300,
+  baseWidth = '100%',
   autoplay = true,
   autoplayDelay = 2500,
   pauseOnHover = false,
   loop = false,
   round = false
 }) {
- const containerPadding = 16;
-  const itemWidth = baseWidth - containerPadding * 2;
+  const [containerWidth, setContainerWidth] = useState(0);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      setContainerWidth(containerRef.current.offsetWidth);
+    }
+  }, []);
+
+  const containerPadding = 16;
+  const itemWidth = containerWidth - containerPadding * 2;
   const trackItemOffset = itemWidth + GAP;
 
   const carouselItems = loop ? [...items, items[0]] : items;
@@ -59,7 +69,6 @@ export function ProjectsSection({
   const [isHovered, setIsHovered] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
 
-  const containerRef = useRef(null);
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
       const container = containerRef.current;
@@ -105,6 +114,7 @@ export function ProjectsSection({
   const handleDragEnd = (_, info) => {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
+
     if (offset < -DRAG_BUFFER || velocity < -VELOCITY_THRESHOLD) {
       if (loop && currentIndex === items.length - 1) {
         setCurrentIndex(currentIndex + 1);
@@ -136,19 +146,18 @@ export function ProjectsSection({
         round ? 'rounded-full border border-white' : 'rounded-[24px] border border-[#222]'
       }`}
       style={{
-        width: `${baseWidth}px`,
+        width: baseWidth,
+        height:313.39,
         ...(round && { height: `${baseWidth}px` })
       }}
     >
       <motion.div
-        className="flex"
+        className="flex h-full"
         drag="x"
         {...dragProps}
         style={{
           width: itemWidth,
           gap: `${GAP}px`,
-          perspective: 1000,
-          perspectiveOrigin: `${currentIndex * trackItemOffset + itemWidth / 2}px 50%`,
           x
         }}
         onDragEnd={handleDragEnd}
@@ -157,14 +166,20 @@ export function ProjectsSection({
         onAnimationComplete={handleAnimationComplete}
       >
         {carouselItems.map((item, index) => {
-          const range = [-(index + 1) * trackItemOffset, -index * trackItemOffset, -(index - 1) * trackItemOffset];
-          const outputRange = [90, 0, -90];
+          const range = [
+            (index + 1) * trackItemOffset,
+            index * trackItemOffset,
+            (index - 1) * trackItemOffset
+          ];
+          const outputRange = [180, 0, -180];
+
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const rotateY = useTransform(x, range, outputRange, { clamp: false });
+
           return (
             <motion.div
               key={index}
-              className={`relative shrink-0 flex flex-col ${
+              className={`relative shrink-0 flex flex-col h-full ${
                 round
                   ? 'items-center justify-center text-center bg-[#060010] border-0'
                   : 'items-start justify-between bg-[#222] border border-[#222] rounded-[12px]'
