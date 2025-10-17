@@ -24,7 +24,7 @@ function Home() {
         enableTilt={true}
         enableMagnetism={true}
         clickEffect={true}
-        spotlightRadius={150}
+        spotlightRadius={70}
         particleCount={particleCount}
         glowColor={glowColor}
       >

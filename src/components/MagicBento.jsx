@@ -47,9 +47,9 @@ const ParticleCard = ({
   style,
   particleCount = DEFAULT_PARTICLE_COUNT,
   glowColor = DEFAULT_GLOW_COLOR,
-  enableTilt = true,
-  clickEffect = false,
-  enableMagnetism = false
+  enableTilt = false,
+  clickEffect = true,
+  enableMagnetism = true
 }) => {
   const cardRef = useRef(null);
   const particlesRef = useRef([]);
