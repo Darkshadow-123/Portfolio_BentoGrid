@@ -185,7 +185,7 @@ export function ProjectsSection({
                   : 'items-start justify-between bg-[#222] border border-[#222] rounded-[12px]'
               } overflow-hidden cursor-grab active:cursor-grabbing`}
               style={{
-                width: itemWidth,
+                width: '100%',
                 height: round ? itemWidth : '100%',
                 rotateY: rotateY,
                 ...(round && { borderRadius: '50%' })
