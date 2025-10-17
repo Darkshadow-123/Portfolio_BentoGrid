@@ -47,7 +47,7 @@ export function ProjectsSection({
   autoplay = true,
   autoplayDelay = 2500,
   pauseOnHover = false,
-  loop = false,
+  loop = true,
   round = false
 }) {
   const [containerWidth, setContainerWidth] = useState(0);
