@@ -50,7 +50,7 @@ export function LeetcodeSection() {
   const slides = [
     {
       icon: Hash,
-      label: "Total Solved",
+      label: "Total",
       value: stats.totalSolved,
       color: "purple",
       bgColor: "bg-purple-500/20",
@@ -135,7 +135,7 @@ export function LeetcodeSection() {
             onClick={() => setCurrentSlide(index)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'w-8 bg-purple-500'
+                ? 'w-3 bg-purple-500'
                 : 'w-1.5 bg-white/30 hover:bg-white/50'
             }`}
             aria-label={`Go to slide ${index + 1}`}
@@ -145,7 +145,7 @@ export function LeetcodeSection() {
 
       {/* Background decoration */}
       <div className="absolute inset-0 flex items-center justify-center opacity-10">
-        <Icon className="h-32 w-32 text-white" />
+        <Icon className="h-16 w-16 text-white" />
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const updateCardGlowProperties = (card, mouseX, mouseY, glow, radius) => {
 const ParticleCard = ({
   children,
   className = '',
-  disableAnimations = false,
+  disableAnimations = true,
   style,
   particleCount = DEFAULT_PARTICLE_COUNT,
   glowColor = DEFAULT_GLOW_COLOR,
@@ -450,7 +450,7 @@ const MagicBento = ({
             --glow-x: 50%;
             --glow-y: 50%;
             --glow-intensity: 0;
-            --glow-radius: 200px;
+            --glow-radius: 100px;
             --glow-color: ${glowColor};
             --border-color: #392e4e;
             --background-dark: #060010;
@@ -477,7 +477,7 @@ const MagicBento = ({
             content: '';
             position: absolute;
             inset: 0;
-            padding: 6px;
+            padding: 3px;
             background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
                 rgba(${glowColor}, calc(var(--glow-intensity) * 0.8)) 0%,
                 rgba(${glowColor}, calc(var(--glow-intensity) * 0.4)) 30%,
