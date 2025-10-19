@@ -69,7 +69,7 @@ function Home() {
 
           {/* Profile Picture */}
           <ParticleCard
-            className="col-span-3 row-span-7 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+            className="col-span-3 row-span-7 rounded-3xl bg-[#060010] flex items-start justify-start magic-bento-card magic-bento-card--border-glow"
             particleCount={8}
             glowColor={glowColor}
             enableTilt={true}
