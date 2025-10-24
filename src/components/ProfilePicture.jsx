@@ -11,7 +11,8 @@ const items = [
 ];
 
   return (
-  <div className="flex flex-col items-start justify-evenly h-full p-4 text-left">
+  <div className="flex flex-col items-start justify-evenly h-full p-2 text-left m-2.5">
+    <h1 className="text-4xl text-white font-extrabold">Daily Tool Stack!</h1>
     <GlassIcons items={items} />
   </div>  
   );

@@ -88,7 +88,7 @@ export function LeetcodeSection() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full w-full p-4">
+      <div className="flex items-center justify-center h-full w-full p-4 overflow-hidden">
         <div className="text-center text-white">
           <h2 className="text-xl font-bold mb-2">LeetCode</h2>
           <p className="text-sm opacity-70">Loading...</p>
@@ -101,12 +101,12 @@ export function LeetcodeSection() {
   const Icon = currentData.icon;
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-full w-full p-4 text-white overflow-hidden">
+    <div className="relative  flex flex-col items-center justify-center h-full w-full text-white overflow-visible ">
       {/* Title */}
-      <h2 className="text-lg font-bold mb-4 z-10">LeetCode</h2>
+      <h2 className="text-lg pb-3 font-bold mb-4 z-10">LeetCode</h2>
       
       {/* Sliding Content */}
-      <div className="relative w-full flex-1 flex items-center justify-center">
+      <div className="relative w-full pt-2 flex-1 flex items-center justify-center">
         {slides.map((slide, index) => {
           const SlideIcon = slide.icon;
           return (
@@ -128,7 +128,7 @@ export function LeetcodeSection() {
       </div>
 
       {/* Progress Indicators */}
-      <div className="flex gap-2 mt-4 z-10">
+      <div className="flex gap-2 mt-4 pt-7  z-10">
         {slides.map((_, index) => (
           <button
             key={index}

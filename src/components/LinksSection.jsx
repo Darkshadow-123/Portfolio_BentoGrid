@@ -1,6 +1,7 @@
 import { Instagram, Github, Linkedin, Twitter, Mail } from "lucide-react";
-
+import Heatmap from "../components/Heatmap";
 import Dock from './Dock';
+import { LeetcodeSection } from "./LeetcodeSection";
 
   const items = [
     { icon: <Instagram size={18} color="white" />, label: 'Instagram', onClick: () => alert('Instagram!') },
@@ -11,14 +12,19 @@ import Dock from './Dock';
   ];
 export function LinksSection() {
   return (
-    <div className="text-center text-white p-4">
-      <h2 className="text-2xl font-bold">Profiles & Resume</h2>
-    <Dock
+    <div className="flex flex-l items-center justify-center gap-6 p-6 rounded-2xl shadow-lg">
+      <div className="w-full h-full max-w-md">
+      <LeetcodeSection />
+      </div>
+      <div className="w-full h-full max-w-md">
+      <Dock
       items={items}
       panelHeight={68}
       baseItemSize={50}
       magnification={60}
-    />
+      />        
+      </div>
     </div>
+
   );
 }
