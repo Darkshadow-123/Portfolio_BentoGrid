@@ -29,7 +29,7 @@ function Home() {
         particleCount={particleCount}
         glowColor={glowColor}
       >
-        <div className="grid h-full w-full grid-cols-10 grid-rows-10 gap-5">
+        <div className="grid h-full w-full grid-cols-10 grid-rows-8 gap-4 p-5">
           
           {/* Description */}
           <ParticleCard
@@ -58,7 +58,7 @@ function Home() {
 
           {/* Tech Stack */}
           <ParticleCard
-            className="col-span-2 row-span-7 rounded-3xl bg-[#060010] flex items-start justify-items-start magic-bento-card magic-bento-card--border-glow"
+            className="col-span-2 row-span-6 rounded-3xl bg-[#060010] flex items-start justify-items-start magic-bento-card magic-bento-card--border-glow"
             particleCount={particleCount}
             glowColor={glowColor}
             enableTilt={true}
@@ -70,7 +70,7 @@ function Home() {
 
           {/* Profile Picture */}
           <ParticleCard
-            className="col-span-4 row-span-7 rounded-3xl bg-[#060010] flex items-start justify-start magic-bento-card magic-bento-card--border-glow"
+            className="col-span-4 row-span-6 rounded-3xl bg-[#060010] flex items-start justify-start magic-bento-card magic-bento-card--border-glow"
             particleCount={8}
             glowColor={glowColor}
             enableTilt={true}
@@ -82,7 +82,7 @@ function Home() {
 
           {/* Links + Resume */}
           <ParticleCard
-            className="col-span-4 row-span-3 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+            className="col-span-4 row-span-2 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
             particleCount={10}
             glowColor={glowColor}
             enableTilt={true}
@@ -114,18 +114,6 @@ function Home() {
             enableMagnetism={true}
           >
             <ContactSection />
-          </ParticleCard>
-
-          {/* Leetcode Section */}
-          <ParticleCard
-            className="col-span-3 row-span-2 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
-            particleCount={10}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-          <LeetcodeSection/>
           </ParticleCard>
 
         </div>

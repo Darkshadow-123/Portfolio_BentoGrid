@@ -2,40 +2,40 @@ export function SkillsSection() {
   return (
     <div className="text-white p-4 text-justify">
       <h2 className="text-4xl font-extrabold mb-20">Tech Stack</h2>
-      <ul className="mt-2 space-y-15">
+      <ul className="mt-2 space-y-15 decoration-0">
         <li className="">Languages :
-          <ul className="space-y-2 list-disc list-inside">
-            <li>C++</li>
-            <li>HTML</li>
-            <li>JavaScript</li>
+          <ul className="space-y-2 flex flex-wrap list-none list-inside p-1 ">
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">C++</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">HTML</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">JavaScript</li>
           </ul>
         </li>
         <li className="">Frontend :
-          <ul className="space-y-2 list-disc list-inside">
-            <li>React</li>
-            <li>Tailwind CSS</li>
+          <ul className="space-y-2 flex flex-wrap list-none list-inside p-1">
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">React</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Tailwind CSS</li>
           </ul>
         </li>
         <li className="">Backend :
-          <ul className="space-y-2 list-disc list-inside">
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>FastAPI</li>
+          <ul className="space-y-2 flex flex-wrap list-none list-inside p-1">
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Node.js</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Express.js</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">FastAPI</li>
           </ul>
         </li>
         <li className="">Database and Services :
-          <ul className="space-y-2 list-disc list-inside">
-            <li>MongoDB</li>
-            <li>Cloudinary</li>
-            <li>Redis</li>
+          <ul className="space-y-2 flex flex-wrap list-none list-inside p-1">
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">MongoDB</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Cloudinary</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Redis</li>
           </ul>
         </li>
         <li className="">Tools and Others :
-          <ul className="space-y-2 list-disc list-inside">
-            <li>Git</li>
-            <li>Postman</li>
-            <li>Figma</li>
-            <li>Authentication(JWT)</li>
+          <ul className="space-y-2 flex flex-wrap list-none list-inside p-1">
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Git</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Postman</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Figma</li>
+            <li className="bg-violet-500 rounded-xs h-full flex flex-col sm:flex-row items-center hover:bg-violet-600 transition-all duration-200 cursor-pointer border border-slate-600/50 overflow-hidden p-0.5 m-1 ">Authentication(JWT)</li>
           </ul>
         </li>
       </ul>

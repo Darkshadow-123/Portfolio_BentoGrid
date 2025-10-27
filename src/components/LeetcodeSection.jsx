@@ -12,7 +12,7 @@ export function LeetcodeSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    const username = "priyanshrajgupta"; // Replace with your actual LeetCode username
+    const username = "R-I-S-H-I-"; // Replace with your actual LeetCode username
     fetch(`https://leetcode-stats-api.herokuapp.com/${username}`)
       .then((res) => res.json())
       .then((data) => {
@@ -101,12 +101,12 @@ export function LeetcodeSection() {
   const Icon = currentData.icon;
 
   return (
-    <div className="relative  flex flex-col items-center justify-center h-full w-full text-white overflow-visible ">
+    <div className="relative flex flex-col items-center justify-center mt-4 text-white overflow-visible ">
       {/* Title */}
-      <h2 className="text-lg pb-3 font-bold mb-4 z-10">LeetCode</h2>
+      <h2 className="text-2xl font-bold mb-18 z-10">LeetCode</h2>
       
       {/* Sliding Content */}
-      <div className="relative w-full pt-2 flex-1 flex items-center justify-center">
+      <div className="relative w-full mb-25 flex-1 flex items-center justify-center">
         {slides.map((slide, index) => {
           const SlideIcon = slide.icon;
           return (
@@ -128,7 +128,7 @@ export function LeetcodeSection() {
       </div>
 
       {/* Progress Indicators */}
-      <div className="flex gap-2 mt-4 pt-7  z-10">
+      {/* <div className="flex gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -141,11 +141,11 @@ export function LeetcodeSection() {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Background decoration */}
       <div className="absolute inset-0 flex items-center justify-center opacity-10">
-        <Icon className="h-16 w-16 text-white" />
+        <Icon className="h-20 w-20 text-white" />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import { LeetcodeSection } from "./LeetcodeSection";
   ];
 export function LinksSection() {
   return (
-    <div className="flex flex-l items-center justify-center gap-6 p-6 rounded-2xl shadow-lg">
+    <div className="flex items-center justify-center p-10 rounded-2xl shadow-lg">
       <div className="w-full h-full max-w-md">
       <LeetcodeSection />
       </div>
