@@ -58,7 +58,7 @@ function Home() {
 
           {/* Tech Stack */}
           <ParticleCard
-            className="col-span-2 row-span-6 rounded-3xl bg-[#060010] flex items-start justify-items-start magic-bento-card magic-bento-card--border-glow"
+            className="col-span-2 row-span-4 rounded-3xl bg-[#060010] flex items-start justify-items-start magic-bento-card magic-bento-card--border-glow"
             particleCount={particleCount}
             glowColor={glowColor}
             enableTilt={true}
@@ -94,7 +94,7 @@ function Home() {
 
           {/* Project Section */}
           <ParticleCard
-            className="col-span-4 row-span-2 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+            className="col-span-6 row-span-2 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
             particleCount={particleCount}
             glowColor={glowColor}
             enableTilt={true}
