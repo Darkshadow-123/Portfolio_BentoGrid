@@ -35,7 +35,7 @@ const Heatmap = () => {
         <h2 className="text-3xl text-white md:text-4xl font-bold mb-12 text-center text-primary">
         LeetCode <span className="text-white">Activity</span>
       </h2>
-    <div className="container justify-center max-w-3xl grid grid-cols-0.5 md:grid-cols-1 gap-6">
+    <div className="container justify-center max-w-3xl grid grid-cols-1 md:grid-cols-1 gap-6">
         <div className="">
             {!leetcodeData.length ? (
                 <p className="text-center text-sm text-gray-400">Loading activity...</p>

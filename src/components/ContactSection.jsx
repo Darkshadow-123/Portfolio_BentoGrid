@@ -1,18 +1,80 @@
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
+export function ContactSection() {
+  const form = useRef();
 
+  const sendEmail = (e) => {
+    e.preventDefault();
 
+    emailjs
+      .sendForm(
+        "service_hfuegzh ", // ✅ Replace with your actual service ID
+        "template_o9gc41h",    // ✅ Replace with your template ID
+        form.current,
+        {
+          publicKey: "Odk6FIgSiHg7G6FNG", // ✅ Replace with your EmailJS public key
+        }
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          alert("Failed to send message. Try again later.");
+        }
+      );
+  };
 
-
-export function ContactSection ()  {
   return (
-    <div className="text-center text-white p-4 w-full">
-      <h2 className="text-2xl font-bold">Contact Me</h2>
-      <p>Email: youremail@example.com</p>
-      <form className="mt-4 flex flex-col gap-2 w-full max-w-sm mx-auto">
-        <input type="text" placeholder="Your Name" className="p-2 rounded text-white" />
-        <input type="email" placeholder="Your Email" className="p-2 rounded text-white" />
-        <textarea placeholder="Message" className="p-2 rounded text-white"></textarea>
-        <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200">Send</button>
+    <div className="text-center text-white p-6 w-full min-h-screen flex flex-col items-center">
+      <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
+      <p className="text-gray-300 mb-6">Feel free to get in touch using the form below.</p>
+
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="flex flex-col gap-3 w-full max-w-md p-6 rounded-2xl shadow-lg"
+      >
+        <input type="hidden" name="time" value={new Date().toLocaleString()} />
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          className="p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          className="p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <input
+          type="text"
+          name="title"
+          placeholder="Subject"
+          required
+          className="p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <textarea
+          name="message"
+          placeholder="Message"
+          required
+          className="p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 h-32 resize-none"
+        ></textarea>
+
+        <button
+          type="submit"
+          className="bg-white text-black px-6 py-3 rounded font-semibold hover:bg-gray-200 transition"
+        >
+          Send
+        </button>
       </form>
     </div>
   );
