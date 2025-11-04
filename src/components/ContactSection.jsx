@@ -9,6 +9,7 @@ export function ContactSection() {
 
     emailjs
       .sendForm(
+
         "service_hfuegzh", // ✅ Replace with your actual service ID
         "template_o9gc41h",    // ✅ Replace with your template ID
         form.current,
