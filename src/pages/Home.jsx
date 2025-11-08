@@ -29,94 +29,96 @@ function Home() {
         particleCount={particleCount}
         glowColor={glowColor}
       >
-        <div className="grid h-full w-full grid-cols-10 grid-rows-4 gap-4 p-5">
-          
-          {/* Description */}
-          <ParticleCard
-            className="col-span-5 row-span-1 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
-            particleCount={particleCount}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-            <Description />
-          </ParticleCard>
+        <div className="w-full p-6 rounded-3xl bg-gradient-to-br from-[#0a0015]/90 via-[#0a0015]/90 to-[#0a0015]/90 backdrop-blur-xl">
+        <div className="grid w-full grid-cols-10 grid-rows-[repeat(4,_350px)] gap-5">
 
-          {/* Leetcode Section */}
-          <ParticleCard
-            className="col-span-3 row-span-1 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
-            particleCount={10}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-            <Heatmap />
-          </ParticleCard>
+    {/* Description */}
+    <ParticleCard
+      className="col-span-5 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      particleCount={particleCount}
+      glowColor={glowColor}
+      enableTilt
+      clickEffect
+      enableMagnetism
+    >
+      <Description />
+    </ParticleCard>
 
+    {/* Leetcode Section */}
+    <ParticleCard
+      className="col-span-3 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      particleCount={10}
+      glowColor={glowColor}
+      enableTilt
+      clickEffect
+      enableMagnetism
+    >
+      <Heatmap />
+    </ParticleCard>
 
-          {/* Tech Stack */}
-          <ParticleCard
-            className="col-span-2 row-span-2 rounded-3xl bg-[#060010] flex items-start justify-items-start magic-bento-card magic-bento-card--border-glow"
-            particleCount={particleCount}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-            <SkillsSection />
-          </ParticleCard>
+    {/* Skills / Tech Stack */}
+    <ParticleCard
+      className="col-span-2 row-span-2 rounded-3xl bg-[#060010]/70 flex items-start justify-items-start magic-bento-card magic-bento-card--border-glow"
+      particleCount={particleCount}
+      glowColor={glowColor}
+      enableTilt
+      clickEffect
+      enableMagnetism
+    >
+      <SkillsSection />
+    </ParticleCard>
 
-          {/* Profile Picture */}
-          <ParticleCard
-            className="col-span-4 row-span-3 rounded-3xl bg-[#060010] flex items-start justify-start magic-bento-card magic-bento-card--border-glow"
-            particleCount={8}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-            <ProfilePicture />
-          </ParticleCard>
+    {/* Profile Picture */}
+    <ParticleCard
+      className="col-span-4 row-span-3 rounded-3xl bg-[#060010]/70 flex items-start justify-start magic-bento-card magic-bento-card--border-glow"
+      particleCount={8}
+      glowColor={glowColor}
+      enableTilt
+      clickEffect
+      enableMagnetism
+    >
+      <ProfilePicture />
+    </ParticleCard>
 
-          {/* Links + Resume */}
-          <ParticleCard
-            className="col-span-4 row-span-1 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
-            particleCount={10}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-            <LinksSection />
-          </ParticleCard>
+    {/* Links + Resume */}
+    <ParticleCard
+      className="col-span-4 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      particleCount={10}
+      glowColor={glowColor}
+      enableTilt
+      clickEffect
+      enableMagnetism
+    >
+      <LinksSection />
+    </ParticleCard>
 
-          {/* Project Section */}
-          <ParticleCard
-            className="col-span-6 row-span-1 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
-            particleCount={particleCount}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-            <ProjectsSection/>
-          </ParticleCard>
+    {/* Projects */}
+    <ParticleCard
+      className="col-span-6 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      particleCount={particleCount}
+      glowColor={glowColor}
+      enableTilt
+      clickEffect
+      enableMagnetism
+    >
+      <ProjectsSection />
+    </ParticleCard>
 
-          {/* Contact Section */}
-          <ParticleCard
-            className="col-span-6 row-span-1 rounded-3xl bg-[#060010] flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
-            particleCount={particleCount}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={true}
-            enableMagnetism={true}
-          >
-            <ContactSection />
-          </ParticleCard>
+    {/* Contact */}
+    <ParticleCard
+      className="col-span-6 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      particleCount={particleCount}
+      glowColor={glowColor}
+      enableTilt
+      clickEffect
+      enableMagnetism
+    >
+      <ContactSection />
+    </ParticleCard>
 
-        </div>
+  </div>
+  
+</div>
       </MagicBento>
     </div>
   );

@@ -31,7 +31,7 @@ const Heatmap = () => {
   };
 
   return (
-    <div id="leetcode" className="py-24 px-4 relative justify-center ">
+    <div id="leetcode" className="py-24 relative justify-center ">
         <h2 className="text-3xl text-white md:text-4xl font-bold mb-12 text-center text-primary">
         LeetCode <span className="text-white">Activity</span>
       </h2>
