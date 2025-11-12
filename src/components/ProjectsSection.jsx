@@ -144,7 +144,7 @@ export function ProjectsSection({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden p-4 mt-4 ${
+      className={`relative overflow-hidden p-4 mt-6 ${
         round ? 'rounded-full border border-white' : 'rounded-[24px] border border-[#222]'
       }`}
       style={{
@@ -185,7 +185,7 @@ export function ProjectsSection({
               } overflow-hidden cursor-grab active:cursor-grabbing`}
               style={{
                 width: '100%',
-                height: '300px',
+                height: '323px',
                 rotateY: rotateY,
                 ...(round && { borderRadius: '50%' })
               }}
