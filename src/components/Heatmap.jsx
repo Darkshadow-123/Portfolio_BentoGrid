@@ -42,7 +42,7 @@ const Heatmap = () => {
             ) : (
     <HeatMap
       startDate={new Date("2025-06-01")}  // or dynamic date
-      endDate={new Date()}
+      endDate={new Date("2025-09-30")}    // or dynamic date
       values={leetcodeData}
       classForValue={classForValue}
       gutterSize={1}

@@ -10,14 +10,15 @@ import {ProjectsSection} from "../components/ProjectsSection";
 
 import { ParticleCard } from "../components/MagicBento";
 import Heatmap from "../components/Heatmap";
+import HomeStage from "./HomeStage";
 
 function Home() {
   const glowColor = "243, 243, 243";
   const particleCount = 12;
   
   return (
-    <div className="min-h-screen w-full p-6">
-      <MagicBento
+    
+      < HomeStage> <MagicBento
         textAutoHide={true}
         enableStars={false} // We'll handle particles individually
         enableSpotlight={true}
@@ -29,7 +30,6 @@ function Home() {
         particleCount={particleCount}
         glowColor={glowColor}
       >
-        <div className="w-full p-6 rounded-3xl bg-gradient-to-br from-[#0a0015]/90 via-[#0a0015]/90 to-[#0a0015]/90 backdrop-blur-xl">
         <div className="grid w-full grid-cols-10 grid-rows-[repeat(4,_350px)] gap-5">
 
     {/* Description */}
@@ -106,7 +106,19 @@ function Home() {
 
     {/* Contact */}
     <ParticleCard
-      className="col-span-6 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      className="col-span-3 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      particleCount={particleCount}
+      glowColor={glowColor}
+      enableTilt
+      clickEffect
+      enableMagnetism
+    >
+      <ContactSection />
+    </ParticleCard>
+    
+    {/* Contact */}
+    <ParticleCard
+      className="col-span-3 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
       particleCount={particleCount}
       glowColor={glowColor}
       enableTilt
@@ -116,11 +128,9 @@ function Home() {
       <ContactSection />
     </ParticleCard>
 
-  </div>
-  
-</div>
+  </div> 
       </MagicBento>
-    </div>
+      </HomeStage>
   );
 }
 

@@ -127,25 +127,9 @@ export function LeetcodeSection() {
         })}
       </div>
 
-      {/* Progress Indicators */}
-      {/* <div className="flex gap-2 z-10">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'w-3 bg-purple-500'
-                : 'w-1.5 bg-white/30 hover:bg-white/50'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div> */}
-
       {/* Background decoration */}
       <div className="absolute inset-0 flex items-center justify-center opacity-10">
-        <Icon className="h-20 w-20 text-white" />
+        <Icon className="h-40 w-40 text-white" />
       </div>
     </div>
   );

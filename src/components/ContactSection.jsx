@@ -31,14 +31,14 @@ export function ContactSection() {
   };
 
   return (
-    <div className="text-center text-white w-full min-h-screen flex flex-col items-center justify-center">
-      <h2 className="text-3xl font-bold">Contact Me</h2>
-      <p className="text-gray-300">Feel free to get in touch using the form below.</p>
+    <div className="text-center text-white p-4 w-full min-h-screen flex flex-col items-center justify-center">
+      <h2 className="text-2xl font-semibold mb-1 tracking-wide">Contact Me</h2>
+      <p className="text-gray-300 text-sm mb-2">Feel free to get in touch using the form below.</p>
 
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="flex flex-col gap-1 w-full max-w-md p-2 rounded-2xl shadow-lg"
+        className="flex flex-col gap-1 p-1 w-full max-w-sm rounded-xl shadow-lg bg-[#0a0015]/40 backdrop-blur-xl"
       >
         <input type="hidden" name="time" value={new Date().toLocaleString()} />
 
@@ -47,32 +47,32 @@ export function ContactSection() {
           name="name"
           placeholder="Your Name"
           required
-          className="p-1 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="p-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30"
         />
         <input
           type="email"
           name="email"
           placeholder="Your Email"
           required
-          className="p-1 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="p-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30"
         />
         <input
           type="text"
           name="title"
           placeholder="Subject"
           required
-          className="p-1 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30"
         />
         <textarea
           name="message"
           placeholder="Message"
           required
-          className="p-1 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 h-32 resize-none"
+          className="p-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30 h-20 mb-1 resize-none"
         ></textarea>
 
         <button
           type="submit"
-          className="bg-white text-black px-2 py-1 rounded font-semibold hover:bg-gray-200 transition"
+          className=" bg-white text-black py-2 rounded-lg font-semibold hover:bg-gray-200 active:scale-95 transition"
         >
           Send
         </button>
