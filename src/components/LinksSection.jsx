@@ -1,5 +1,4 @@
 import { Instagram, Github, Linkedin, Twitter, Mail } from "lucide-react";
-import Heatmap from "../components/Heatmap";
 import Dock from './Dock';
 import { LeetcodeSection } from "./LeetcodeSection";
 

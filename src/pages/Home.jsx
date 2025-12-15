@@ -9,7 +9,7 @@ import { ContactSection } from "../components/ContactSection";
 import {ProjectsSection} from "../components/ProjectsSection";
 
 import { ParticleCard } from "../components/MagicBento";
-import Heatmap from "../components/Heatmap";
+import ActivityHeatmap from "../components/ActivityHeatmap";
 import HomeStage from "./HomeStage";
 import Blogs from "../components/Blogs";
 
@@ -54,7 +54,7 @@ function Home() {
       clickEffect
       enableMagnetism
     >
-      <Heatmap />
+      <ActivityHeatmap />
     </ParticleCard>
 
     {/* Skills / Tech Stack */}
