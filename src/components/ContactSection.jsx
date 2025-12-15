@@ -31,7 +31,7 @@ export function ContactSection() {
   };
 
   return (
-    <div className="text-center text-white p-4 w-full min-h-screen flex flex-col items-center justify-center">
+    <div className="text-center text-white p-4 w-full h-full flex flex-col items-center justify-center">
       <h2 className="text-2xl font-semibold mb-1 tracking-wide">Contact Me</h2>
       <p className="text-gray-300 text-sm mb-2">Feel free to get in touch using the form below.</p>
 

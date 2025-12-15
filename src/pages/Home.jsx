@@ -11,6 +11,7 @@ import {ProjectsSection} from "../components/ProjectsSection";
 import { ParticleCard } from "../components/MagicBento";
 import Heatmap from "../components/Heatmap";
 import HomeStage from "./HomeStage";
+import Blogs from "../components/Blogs";
 
 function Home() {
   const glowColor = "243, 243, 243";
@@ -70,7 +71,7 @@ function Home() {
 
     {/* Profile Picture */}
     <ParticleCard
-      className="col-span-4 row-span-3 rounded-3xl bg-[#060010]/70 flex items-start justify-start magic-bento-card magic-bento-card--border-glow"
+      className="col-span-4 row-span-2 rounded-3xl bg-[#060010]/70 flex items-start justify-start magic-bento-card magic-bento-card--border-glow"
       particleCount={8}
       glowColor={glowColor}
       enableTilt
@@ -106,19 +107,19 @@ function Home() {
 
     {/* Contact */}
     <ParticleCard
-      className="col-span-3 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      className="col-span-6 row-span-2 h-full flex-col rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
       particleCount={particleCount}
       glowColor={glowColor}
       enableTilt
       clickEffect
       enableMagnetism
     >
-      <ContactSection />
+      <Blogs />
     </ParticleCard>
     
     {/* Contact */}
     <ParticleCard
-      className="col-span-3 row-span-1 rounded-3xl bg-[#060010]/70 flex items-center justify-center magic-bento-card magic-bento-card--border-glow"
+      className="col-span-4 row-span-2 h-full rounded-3xl bg-[#060010]/70 flex flex-col items-center justify-center magic-bento-card magic-bento-card--border-glow"
       particleCount={particleCount}
       glowColor={glowColor}
       enableTilt
