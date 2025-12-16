@@ -1,7 +1,7 @@
 import React from "react";
 import MagicBento from "../components/MagicBento"; // Adjust path as needed
 import {Description} from "../components/Description";
-import {ProfilePicture} from "../components/ProfilePicture";
+import {ToolStack} from "../components/ToolStack";
 import {LeetcodeSection} from "../components/LeetcodeSection";
 import {SkillsSection} from "../components/SkillsSection";
 import {LinksSection} from "../components/LinksSection";
@@ -78,7 +78,7 @@ function Home() {
       clickEffect
       enableMagnetism
     >
-      <ProfilePicture />
+      <ToolStack />
     </ParticleCard>
 
     {/* Links + Resume */}

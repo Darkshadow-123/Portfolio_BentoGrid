@@ -6,7 +6,7 @@ const HomeStage = ({ children }) => {
       className="
         relative w-full
         rounded-[40px]
-        p-4 md:p-5 lg:p-5
+        p-8 md:p-12 lg:p-12
 
         /* Glassy background */
         bg-[#05000b]/60

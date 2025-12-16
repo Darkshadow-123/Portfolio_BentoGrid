@@ -13,7 +13,7 @@ export function LinksSection() {
   return (
     <div className="flex items-center justify-center p-10 rounded-2xl shadow-lg">
       <div className="w-full h-full max-w-md">
-      <LeetcodeSection />
+
       </div>
       <div className="w-full h-full max-w-md">
       <Dock
