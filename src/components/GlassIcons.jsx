@@ -22,7 +22,7 @@ const GlassIcons = ({ items, className }) => {
           }`}
         >
           <span
-            className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[0deg] group-hover:[transform:rotate(18deg)_translate3d(-0.5em,-0.5em,0.5em)]"
+            className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[6deg] group-hover:[transform:rotate(18deg)_translate3d(-0.5em,-0.5em,0.5em)]"
             style={{
               ...getBackgroundStyle(item.color),
               boxShadow: '0.5em -0.5em 0.75em hsla(223, 10%, 10%, 0.15)'
