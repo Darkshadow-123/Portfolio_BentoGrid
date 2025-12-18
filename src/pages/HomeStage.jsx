@@ -5,8 +5,7 @@ const HomeStage = ({ children }) => {
     <div
       className="
         relative w-full
-        rounded-[40px]
-        p-8 md:p-12 lg:p-12
+        p-6 md:p-8 lg:p-8
 
         /* Glassy background */
         bg-[#05000b]/60

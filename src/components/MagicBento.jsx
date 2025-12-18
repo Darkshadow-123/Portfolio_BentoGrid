@@ -239,10 +239,23 @@ const MagicBento = ({
             --glow-color: ${glowColor};
             --border-color: #392e4e;
             --background-dark: #060010;
+            --border: 1px solid var(--border-color);
             --white: hsl(0, 0%, 100%);
             --purple-primary: rgba(132, 0, 255, 1);
             --purple-glow: rgba(132, 0, 255, 0.2);
             --purple-border: rgba(132, 0, 255, 0.8);
+          }
+
+          .no-border-glow::before,
+          .no-border-glow::after {
+          display: none !important;
+          }
+          .no-hover-lift {
+          transition: none !important;
+          }
+          .no-hover-lift:hover {
+          transform: none !important;
+          box-shadow: inherit !important;
           }
           
           .magic-bento-card {

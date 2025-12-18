@@ -27,11 +27,11 @@ function Home() {
         enableTilt={true}
         enableMagnetism={true}
         clickEffect={true}
-        spotlightRadius={75}
+        spotlightRadius={150}
         particleCount={particleCount}
         glowColor={glowColor}
       >
-        <div className="grid w-full grid-cols-10 grid-rows-[repeat(4,_350px)] gap-5">
+        <div className="grid w-full grid-cols-10 grid-rows-[repeat(4,_350px)] rounded-3xl gap-5 p-6 magic-bento-card magic-bento-card--border-glow no-border-glow no-hover-lift">
 
     {/* Description */}
     <ParticleCard
@@ -54,7 +54,7 @@ function Home() {
       clickEffect
       enableMagnetism
     >
-      <ActivityHeatmap />
+      <LinksSection />
     </ParticleCard>
 
     {/* Skills / Tech Stack */}
@@ -90,7 +90,7 @@ function Home() {
       clickEffect
       enableMagnetism
     >
-      <LinksSection />
+      <ActivityHeatmap />
     </ParticleCard>
 
     {/* Projects */}
