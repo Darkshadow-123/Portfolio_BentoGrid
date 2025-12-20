@@ -100,7 +100,7 @@ const items = [
       >
         <div className="group w-full max-w-md mx-auto aspect-video rounded-xl overflow-hidden bg-black shadow-lg">
           <img
-            src="/src/assets/WhatsApp Video 2025-12-17 at 2.07.49 AM (1).gif"
+            src="/assets/WhatsApp Video 2025-12-17 at 2.07.49 AM (1).gif"
             alt="Playlist Preview"
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 motion-reduce:transform-none"

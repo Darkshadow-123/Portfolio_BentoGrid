@@ -10,11 +10,11 @@ export function ContactSection() {
     emailjs
       .sendForm(
 
-        "service_hfuegzh", // ✅ Replace with your actual service ID
-        "template_o9gc41h",    // ✅ Replace with your template ID
+        import.meta.env.VITE_SERVICE_ID, // ✅ Replace with your actual service ID
+        import.meta.env.VITE_CLIENT_ID,    // ✅ Replace with your template ID
         form.current,
         {
-          publicKey: "Odk6FIgSiHg7G6FNG", // ✅ Replace with your EmailJS public key
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY, // ✅ Replace with your EmailJS public key
         }
       )
       .then(

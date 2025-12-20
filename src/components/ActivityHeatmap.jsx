@@ -3,8 +3,8 @@ import HeatMap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
 import "./customHeatmap.css";
 
-const LEETCODE_USER = "R-i-s-h-i-";
-const GITHUB_USER = "Darkshadow-123";
+const LEETCODE_USER =import.meta.env.VITE_LEETCODE_USER
+const GITHUB_USER =import.meta.env.VITE_GITHUB_USER
 
 const HEATMAP_RANGES = {
   leetcode: {

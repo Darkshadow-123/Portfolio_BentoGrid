@@ -18,7 +18,7 @@ export function Description() {
             {/* Profile Image */}
             <div className="w-30 h-30 md:w-36 md:h-36 rounded-2xl overflow-hidden border border-white/20 shadow-lg flex-shrink-0">
               <img
-                src="src/assets/profile.jpg"
+                src="/assets/profile.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover scale-105 transition-transform duration-500 ease-out group-hover:scale-115 group-hover:translate-y-1"
               />
@@ -37,7 +37,7 @@ export function Description() {
 
           {/* Right: Resume Button */}
           <a
-  href="src/assets/Rishi_Lalwani_Resume.pdf"
+  href="/assets/Rishi_Lalwani_Resume.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="

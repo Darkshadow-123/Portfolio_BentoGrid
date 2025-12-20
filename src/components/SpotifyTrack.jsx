@@ -1,6 +1,6 @@
 import React from 'react'
 const SpotifyTrack = ({
-  trackId = "68osIGtVjM7QWVe6pazLHj",
+  trackId = import.meta.env.VITE_TRACKID,
   width = "100%",
   height = 152,
   theme = 0, // 0 = dark, 1 = light

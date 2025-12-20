@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-const MEDIUM_RSS =
-  "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@rishi.123.lalwani";
+const MEDIUM_RSS = import.meta.env.VITE_MEDIUM_RSS
 
 // 🔧 Utility: Extract image from Medium HTML content
 const getImageFromContent = (html) => {
