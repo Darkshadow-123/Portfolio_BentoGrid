@@ -1,6 +1,8 @@
 import GlassIcons from "./GlassIcons";
 import { FiFileText, FiBook, FiHeart, FiCloud, FiEdit, FiBarChart2 } from "react-icons/fi";
 import SpotifyTrack from "./SpotifyTrack";
+import { typography } from "../utils/designSystem";
+
 export function ToolStack() {
 const items = [
   { icon: <FiFileText />, color: 'transparent', label: 'Files' },
@@ -15,7 +17,7 @@ const items = [
   <div className="flex flex-col h-full w-full items-center justify-center">
       {/* Header Section */}
       <div className="flex flex-col items-center justify-center mt-6">
-        <h1 className="text-4xl text-white font-extrabold text-center">
+        <h1 className={`${typography.h1} text-center`}>
           Daily Tool Stack!
         </h1>
       </div>

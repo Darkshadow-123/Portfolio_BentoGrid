@@ -1,3 +1,5 @@
+import { typography, buttonStyles } from "../utils/designSystem";
+
 export function Description() {
   return (
     <section className="w-full h-full flex">
@@ -26,10 +28,10 @@ export function Description() {
 
             {/* Name + Role */}
             <div>
-              <h2 className="text-xl md:text-2xl font-extrabold text-white">
+              <h2 className={typography.h3}>
                 Rishi Lalwani
               </h2>
-              <p className="text-xs md:text-sm font-semibold text-white/70">
+              <p className={typography.label}>
                 Frontend Developer • React • Tailwind • UI Motion
               </p>
             </div>
@@ -37,38 +39,19 @@ export function Description() {
 
           {/* Right: Resume Button */}
           <a
-  href="/assets/Rishi_Lalwani_Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
-    relative inline-flex items-center justify-center
-    px-6 py-3 rounded-xl
-    text-xs font-extrabold tracking-wide
-    text-black
-    bg-gradient-to-r from-violet-400 to-violet-300
-    shadow-md
-    transition-all duration-300 ease-out
-    hover:shadow-[0_0_30px_rgba(167,139,250,0.6)]
-    hover:-translate-y-[1px]
-    active:translate-y-0
-    focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60
-  "
->
-  {/* Glow layer */}
-  <span
-    className="
-      pointer-events-none absolute inset-0 rounded-xl
-      opacity-0 hover:opacity-100
-      blur-xl transition-opacity duration-300
-      bg-violet-400/50
-    "
-  />
+            href="/assets/Rishi_Lalwani_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonStyles.primary}
+          >
+            {/* Glow layer */}
+            <span className={buttonStyles.primaryGlow} />
 
-  {/* Content */}
-  <span className="relative z-10 flex items-center gap-2">
-     Resume
-  </span>
-</a>
+            {/* Content */}
+            <span className="relative z-10 flex items-center gap-2">
+              Resume
+            </span>
+          </a>
 
         </div>
 
@@ -76,7 +59,7 @@ export function Description() {
         {/* DESCRIPTION */}
         {/* ───────────────────────────── */}
         <p className="mt-5 text-sm md:text-base text-white/80 leading-relaxed max-w-2xl">
-          I’m a passionate developer who loves crafting clean, performant web
+          I'm a passionate developer who loves crafting clean, performant web
           experiences using modern frontend technologies. I focus on intuitive
           UX, animation polish, and building interfaces that feel alive.
         </p>

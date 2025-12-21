@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { typography, buttonStyles } from "../utils/designSystem";
 
 const MEDIUM_RSS = import.meta.env.VITE_MEDIUM_RSS
 
@@ -34,9 +35,10 @@ export default function Blogs() {
     );
   }
 
+
   return (
     <section className=" px-4 max-w-5xl mx-auto">
-      <h2 className="text-2xl font-bold text-white mb-3 text-center">
+      <h2 className={`${typography.h2} mb-3 text-center`}>
         Blogs
       </h2>
 
@@ -82,7 +84,7 @@ export default function Blogs() {
                   {new Date(blog.pubDate).toDateString()}
                 </p>
 
-                <h3 className="text-m font-semibold text-white leading-snug line-clamp-2">
+                <h3 className="text-base font-semibold text-white leading-snug line-clamp-2">
                   {blog.title}
                 </h3>
               </div>
@@ -97,11 +99,7 @@ export default function Blogs() {
           href="https://medium.com/@rishi.123.lalwani"
           target="_blank"
           rel="noreferrer"
-          className="
-            inline-block px-6 py-3 rounded-xl
-            bg-white text-black font-semibold
-            hover:bg-gray-200 transition
-          "
+          className={buttonStyles.secondary}
         >
           View all articles on Medium →
         </a>

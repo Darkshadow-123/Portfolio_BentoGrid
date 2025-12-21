@@ -1,8 +1,10 @@
+import { typography } from "../utils/designSystem";
+
 export function SkillsSection() {
   return (
     <div className="text-white p-6 h-full flex flex-col">
       {/* Title */}
-      <h2 className="text-xl font-bold mb-4 tracking-wide">
+      <h2 className={`${typography.h3} mb-4`}>
         Tech Stack
       </h2>
 

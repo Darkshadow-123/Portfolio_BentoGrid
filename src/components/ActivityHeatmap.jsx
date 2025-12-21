@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import HeatMap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
 import "./customHeatmap.css";
+import { typography, buttonStyles } from "../utils/designSystem";
 
 const LEETCODE_USER =import.meta.env.VITE_LEETCODE_USER
 const GITHUB_USER =import.meta.env.VITE_GITHUB_USER
@@ -63,8 +64,8 @@ const ActivityHeatmap = () => {
 
   return (
     <section id="activity" className="py-24">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-primary">
-        <span className="text-white">Coding Activity</span>
+      <h2 className={`${typography.h1} mb-10 text-center`}>
+        Coding Activity
       </h2>
 
       {/* Toggle */}
@@ -72,22 +73,14 @@ const ActivityHeatmap = () => {
         <div className="bg-neutral-900 p-1 rounded-full flex gap-1">
           <button
             onClick={() => setActive("leetcode")}
-            className={`px-5 py-2 text-sm rounded-full transition ${
-              active === "leetcode"
-                ? "bg-purple-600 text-white"
-                : "text-gray-400 hover:text-white"
-            }`}
+            className={active === "leetcode" ? buttonStyles.toggle.active : buttonStyles.toggle.inactive}
           >
             LeetCode
           </button>
 
           <button
             onClick={() => setActive("github")}
-            className={`px-5 py-2 text-sm rounded-full transition ${
-              active === "github"
-                ? "bg-purple-600 text-white"
-                : "text-gray-400 hover:text-white"
-            }`}
+            className={active === "github" ? buttonStyles.toggle.active : buttonStyles.toggle.inactive}
           >
             GitHub
           </button>

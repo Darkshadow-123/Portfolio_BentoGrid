@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Smile, Hash, ThumbsUp, BicepsFlexed } from "lucide-react";
+import { typography } from "../utils/designSystem";
 
 export function LeetcodeSection() {
   const [stats, setStats] = useState({
@@ -90,8 +91,8 @@ export function LeetcodeSection() {
     return (
       <div className="flex items-center justify-center h-full w-full p-4 overflow-hidden">
         <div className="text-center text-white">
-          <h2 className="text-xl font-bold mb-2">LeetCode</h2>
-          <p className="text-sm opacity-70">Loading...</p>
+          <h2 className={`${typography.h3} mb-2`}>LeetCode</h2>
+          <p className={`${typography.bodySmall}`}>Loading...</p>
         </div>
       </div>
     );
@@ -103,7 +104,7 @@ export function LeetcodeSection() {
   return (
     <div className="relative flex flex-col items-center justify-center mt-4 text-white overflow-visible ">
       {/* Title */}
-      <h2 className="text-2xl font-bold mb-18 z-10">LeetCode</h2>
+      <h2 className={`${typography.h2} mb-18 z-10`}>LeetCode</h2>
       
       {/* Sliding Content */}
       <div className="relative w-full mb-25 flex-1 flex items-center justify-center">
@@ -121,7 +122,7 @@ export function LeetcodeSection() {
               }`}
             >
               <p className={`text-lg ${slide.textColor} mb-0`}>{slide.label}</p>
-              <p className="text-3xl font-bold">{slide.value}</p>
+              <p className={`${typography.h1} ${slide.textColor}`}>{slide.value}</p>
             </div>
           );
         })}
