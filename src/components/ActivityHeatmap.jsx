@@ -19,7 +19,7 @@ const HEATMAP_RANGES = {
 };
 
 const ActivityHeatmap = () => {
-  const [active, setActive] = useState("leetcode");
+  const [active, setActive] = useState("github");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -72,17 +72,17 @@ const ActivityHeatmap = () => {
       <div className="flex justify-center mb-8">
         <div className="bg-neutral-900 p-1 rounded-full flex gap-1">
           <button
-            onClick={() => setActive("leetcode")}
-            className={active === "leetcode" ? buttonStyles.toggle.active : buttonStyles.toggle.inactive}
-          >
-            LeetCode
-          </button>
-
-          <button
             onClick={() => setActive("github")}
             className={active === "github" ? buttonStyles.toggle.active : buttonStyles.toggle.inactive}
           >
             GitHub
+          </button>   
+                 
+          <button
+            onClick={() => setActive("leetcode")}
+            className={active === "leetcode" ? buttonStyles.toggle.active : buttonStyles.toggle.inactive}
+          >
+            LeetCode
           </button>
         </div>
       </div>

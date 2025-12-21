@@ -1,16 +1,17 @@
 import GlassIcons from "./GlassIcons";
-import { FiFileText, FiBook, FiHeart, FiCloud, FiEdit, FiBarChart2 } from "react-icons/fi";
-import SpotifyTrack from "./SpotifyTrack";
+import { FaYoutube, FaGithub } from "react-icons/fa";
+import { SiOpenai, SiGooglechrome, SiLeetcode } from "react-icons/si";
+import { VscCode } from "react-icons/vsc";import SpotifyTrack from "./SpotifyTrack";
 import { typography } from "../utils/designSystem";
 
 export function ToolStack() {
 const items = [
-  { icon: <FiFileText />, color: 'transparent', label: 'Files' },
-  { icon: <FiBook />, color: 'transparent', label: 'Books' },
-  { icon: <FiHeart />, color: 'transparent', label: 'Health' },
-  { icon: <FiCloud />, color: 'transparent', label: 'Weather' },
-  { icon: <FiEdit />, color: 'transparent', label: 'Notes' },
-  { icon: <FiBarChart2 />, color: 'transparent', label: 'Stats' },
+  { icon: <VscCode />,color:'transparent' , label: 'VS Code' },
+  { icon: <FaYoutube />,color:'transparent' , label: 'YouTube' },
+  { icon: <SiOpenai />,color:'transparent' , label: 'ChatGPT' },
+  { icon: <SiGooglechrome />,color:'transparent' , label: 'Chrome' },
+  { icon: <SiLeetcode />,color:'transparent' , label: 'LeetCode' },
+  { icon: <FaGithub />,color:'transparent' , label: 'GitHub' },
 ];
 
  return (

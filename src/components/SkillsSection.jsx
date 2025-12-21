@@ -9,35 +9,58 @@ export function SkillsSection() {
       </h2>
 
       {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto pr-2 space-y-6 scrollbar-thin scrollbar-thumb-white/20">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden pr-2 pt-5 pb-5 space-y-6 no-scrollbar
+      [mask-image:linear-gradient(to_bottom,transparent,black_4%,black_96%,transparent)]
+      [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_4%,black_96%,transparent)]">
         
-        <SkillBlock
+         <SkillBlock
           title="Languages"
-          skills={["C++", "HTML", "JavaScript"]}
+          skills={[
+            "C++",
+            "JavaScript",
+          ]}
         />
 
         <SkillBlock
           title="Frontend"
-          skills={["React", "Tailwind CSS"]}
+          skills={[
+            "React.js",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Recharts",
+            "React Router"
+          ]}
         />
 
         <SkillBlock
           title="Backend"
-          skills={["Node.js", "Express.js"]}
+          skills={[
+            "Node.js",
+            "Express.js",
+            "REST APIs",
+            "Passport.js"
+          ]}
         />
 
         <SkillBlock
-          title="Database & Services"
-          skills={["MongoDB", "Redis", "Cloudinary"]}
+          title="Databases & Services"
+          skills={[
+            "MongoDB",
+            "Cloudinary",
+            "MapTiler",
+            "EmailJS"
+          ]}
         />
 
         <SkillBlock
-          title="Tools & Others"
+          title="Developer Tools & Deployment"
           skills={[
             "Git",
+            "GitHub",
             "Postman",
-            "Figma",
-            "JWT Authentication",
+            "Vercel",
+            "VS Code",
+            "Figma"
           ]}
         />
       </div>
@@ -60,7 +83,7 @@ function SkillBlock({ title, skills }) {
               px-3 py-1 text-xs font-medium
               rounded-full
               bg-white/10 border border-white/10
-              hover:bg-white/20 hover:border-white/20
+              hover:bg-white/15 hover:border-white/25
               transition-all duration-200
               cursor-default
             "
