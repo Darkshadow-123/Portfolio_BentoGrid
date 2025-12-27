@@ -1,204 +1,119 @@
-import { useEffect, useState, useRef, useMemo } from 'react';
-import { motion, useMotionValue, useTransform } from 'motion/react';
-import { FiCircle, FiCode, FiFileText, FiLayers, FiLayout } from 'react-icons/fi';
+import { Home, Cpu, Music, LayoutGrid } from "lucide-react";
+import { typography, buttonStyles } from "../utils/designSystem";
 
-const DEFAULT_ITEMS = [
+const PROJECTS = [
   {
-    title: 'Text Animations',
-    description: 'Cool text animations for your projects.',
     id: 1,
-    icon: <FiFileText className="h-4 w-4 text-white" />
+    title: "StayFinder",
+    description:
+      "Full-stack Airbnb-style platform with authentication, maps, cloud uploads, and reviews.",
+    icon: <Home className="w-4 h-4 text-violet-400" />,
+    stack: ["React", "Node", "MongoDB"],
   },
   {
-    title: 'Animations',
-    description: 'Smooth animations for your projects.',
     id: 2,
-    icon: <FiCircle className="h-4 w-4 text-white" />
+    title: "Spotify Profile",
+    description:
+      "Live Spotify profile with embeds, activity, and themed UI.",
+    icon: <Music className="w-4 h-4 text-green-400" />,
+    stack: ["React", "API"],
   },
   {
-    title: 'Components',
-    description: 'Reusable components for your projects.',
     id: 3,
-    icon: <FiLayers className="h-4 w-4 text-white" />
+    title: "Bento Grid UI",
+    description:
+      "Experimental glassmorphism + motion-driven bento layout.",
+    icon: <LayoutGrid className="w-4 h-4 text-cyan-400" />,
+    stack: ["UI", "Motion"],
   },
-  {
-    title: 'Backgrounds',
-    description: 'Beautiful backgrounds and patterns.',
-    id: 4,
-    icon: <FiLayout className="h-4 w-4 text-white" />
-  },
-  {
-    title: 'Common UI',
-    description: 'Common UI components coming soon!',
-    id: 5,
-    icon: <FiCode className="h-4 w-4 text-white" />
-  }
 ];
 
-const GAP = 16;
-const DRAG_BUFFER = 40;
-const VELOCITY_THRESHOLD = 500;
-const SPRING = { type: 'spring', stiffness: 260, damping: 28 };
-
-export function ProjectsSection({
-  items = DEFAULT_ITEMS,
-  baseWidth = '100%',
-  autoplay = true,
-  autoplayDelay = 6000,
-  pauseOnHover = false,
-  loop = true,
-  round = false
-}) {
-  const containerRef = useRef(null);
-  const x = useMotionValue(0);
-
-  const [itemWidth, setItemWidth] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isResetting, setIsResetting] = useState(false);
-
-  const carouselItems = useMemo(
-    () => (loop ? [...items, items[0]] : items),
-    [items, loop]
-  );
-
-  const trackItemOffset = itemWidth + GAP;
-
-  /* Resize handling */
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const observer = new ResizeObserver(([entry]) => {
-      const padding = 32;
-      setItemWidth(entry.contentRect.width - padding);
-    });
-
-    observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  /* Hover pause */
-  useEffect(() => {
-    if (!pauseOnHover || !containerRef.current) return;
-
-    const el = containerRef.current;
-    const onEnter = () => setIsHovered(true);
-    const onLeave = () => setIsHovered(false);
-
-    el.addEventListener('mouseenter', onEnter);
-    el.addEventListener('mouseleave', onLeave);
-
-    return () => {
-      el.removeEventListener('mouseenter', onEnter);
-      el.removeEventListener('mouseleave', onLeave);
-    };
-  }, [pauseOnHover]);
-
-  /* Autoplay */
-  useEffect(() => {
-    if (!autoplay || (pauseOnHover && isHovered)) return;
-
-    const id = setInterval(() => {
-      setCurrentIndex(i => {
-        if (i === carouselItems.length - 1) return loop ? 0 : i;
-        return i + 1;
-      });
-    }, autoplayDelay);
-
-    return () => clearInterval(id);
-  }, [autoplay, autoplayDelay, isHovered, loop, carouselItems.length, pauseOnHover]);
-
-  const handleAnimationComplete = () => {
-    if (loop && currentIndex === carouselItems.length - 1) {
-      setIsResetting(true);
-      x.set(0);
-      setCurrentIndex(0);
-      requestAnimationFrame(() => setIsResetting(false));
-    }
-  };
-
-  const handleDragEnd = (_, info) => {
-    const { offset, velocity } = info;
-
-    if (offset.x < -DRAG_BUFFER || velocity.x < -VELOCITY_THRESHOLD) {
-      setCurrentIndex(i => Math.min(i + 1, carouselItems.length - 1));
-    } else if (offset.x > DRAG_BUFFER || velocity.x > VELOCITY_THRESHOLD) {
-      setCurrentIndex(i => Math.max(i - 1, 0));
-    }
-  };
-
-  const transition = isResetting ? { duration: 0 } : SPRING;
-
+export default function ProjectsSection() {
   return (
-    <div
-      ref={containerRef}
-      className={`relative overflow-hidden p-4 mt-6 ${
-        round ? 'rounded-full border border-white' : 'rounded-2xl border border-[#222]'
-      }`}
-      style={{
-        minWidth: '100%',
-        width: baseWidth,
-        height: round ? baseWidth : 380
-      }}
-    >
-      <motion.div
-        className="flex"
-        drag="x"
-        dragElastic={0.12}
-        onDragEnd={handleDragEnd}
-        animate={{ x: -(currentIndex * trackItemOffset) }}
-        transition={transition}
-        onAnimationComplete={handleAnimationComplete}
-        style={{
-          x,
-          gap: GAP,
-          perspective: 800,
-          perspectiveOrigin: `${currentIndex * trackItemOffset + itemWidth / 2}px 50%`
-        }}
+    <div className="w-full h-full px-5 py-5 flex flex-col">
+
+      {/* Header */}
+      <div className="mb-4 text-center">
+        <h2 className={typography.h3}>Projects</h2>
+      </div>
+
+      {/* Horizontal strip */}
+      <div
+        className="
+          flex gap-4 w-full h-full
+          overflow-x-auto no-scrollbar
+          snap-x snap-mandatory
+          pb-2
+        "
       >
-        {carouselItems.map((item, index) => {
-          const rotateY = useTransform(
-            x,
-            [
-              -(index + 1) * trackItemOffset,
-              -index * trackItemOffset,
-              -(index - 1) * trackItemOffset
-            ],
-            [60, 0, -60],
-            { clamp: false }
-          );
+        {PROJECTS.map((project) => (
+          <div
+            key={project.id}
+            className={`
+              snap-start
+              min-w-[240px]
+              rounded-xl
+              border
+              p-4
+              transition-all duration-200
+              ${
+                project.featured
+                  ? "bg-white/10 border-white/20"
+                  : "bg-white/5 border-white/10"
+              }
+              hover:bg-white/10
+            `}
+          >
+            {/* Title */}
+            <div className="flex items-center gap-2 mb-2">
+              {project.icon}
+              <h3 className={`${typography.h4} leading-tight`}>
+                {project.title}
+              </h3>
+            </div>
 
-          return (
-            <motion.div
-              key={`${item.id}-${index}`}
-              className={`relative shrink-0 flex flex-col ${
-                round
-                  ? 'items-center justify-center text-center bg-[#060010]'
-                  : 'items-start justify-between bg-[#222] border border-[#222] rounded-xl'
-              } cursor-grab active:cursor-grabbing`}
-              style={{
-                width: itemWidth,
-                height: 323,
-                rotateY,
-                borderRadius: round ? '50%' : undefined
-              }}
-            >
-              <div className={round ? '' : 'p-5'}>
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#060010]">
-                  {item.icon}
+            {/* Description */}
+            <p className={`${typography.bodySmall} leading-relaxed line-clamp-3`}>
+              {project.description}
+            </p>
+
+            {/* Stack */}
+            <div className="mt-3 flex flex-wrap gap-2">
+              {project.stack.map((tech) => (
+                <span
+                  key={tech}
+                  className="
+                    px-2 py-0.5 rounded-full
+                    text-[10px] text-white/50
+                    bg-white/5 border border-white/10
+                  "
+                >
+                  {tech}
                 </span>
-              </div>
+              ))}
+            </div>
+          </div>
+        ))}
 
-              <div className="p-5">
-                <h3 className="mb-1 text-lg font-black text-white">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-white/80">{item.description}</p>
-              </div>
-            </motion.div>
-          );
-        })}
-      </motion.div>
+        {/* View more */}
+        <div
+          className="
+            snap-start
+            min-w-[180px]
+            rounded-xl
+            border border-dashed border-white/20
+            flex items-center justify-center
+            text-xs text-white/50
+            hover:text-white
+            hover:border-white/30
+            transition
+          "
+        >
+          <span className="flex items-center gap-1">
+            View all projects →
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

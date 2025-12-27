@@ -1,39 +1,69 @@
 import GlassIcons from "./GlassIcons";
-import { FaYoutube, FaGithub } from "react-icons/fa";
-import { SiOpenai, SiGooglechrome, SiLeetcode } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";import SpotifyTrack from "./SpotifyTrack";
+import { lazy, Suspense } from "react";
+const SpotifyTrack =lazy(()=>import ("./SpotifyTrack"));
 import { typography } from "../utils/designSystem";
 
-export function ToolStack() {
+function ToolIcon({ src, alt }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="
+        w-5 h-5
+        object-contain
+        select-none
+        pointer-events-none
+        opacity-90
+      "
+      loading="lazy"
+      draggable={false}
+    />
+  );
+}
+
 const items = [
-  { icon: <VscCode />,color:'transparent' , label: 'VS Code' },
-  { icon: <FaYoutube />,color:'transparent' , label: 'YouTube' },
-  { icon: <SiOpenai />,color:'transparent' , label: 'ChatGPT' },
-  { icon: <SiGooglechrome />,color:'transparent' , label: 'Chrome' },
-  { icon: <SiLeetcode />,color:'transparent' , label: 'LeetCode' },
-  { icon: <FaGithub />,color:'transparent' , label: 'GitHub' },
+  {
+    icon: <ToolIcon src="/assets/youtube.svg" alt="YouTube" />,
+    color: "transparent",
+    label: "YouTube"
+  },
+  {
+    icon: <ToolIcon src="/assets/googlechrome.svg" alt="Chrome" />,
+    color: "transparent",
+    label: "Chrome"
+  },
+  {
+    icon: <ToolIcon src="/assets/leetcode.svg" alt="LeetCode" />,
+    color: "transparent",
+    label: "LeetCode"
+  },
+  {
+    icon: <ToolIcon src="/assets/github.svg" alt="GitHub" />,
+    color: "transparent",
+    label: "GitHub"
+  }
 ];
 
+export function ToolStack(){
  return (
   <div className="flex flex-col h-full w-full items-center justify-center">
       {/* Header Section */}
       <div className="flex flex-col items-center justify-center mt-6">
         <h1 className={`${typography.h1} text-center`}>
-          Daily Tool Stack!
+          Daily Tool Stack
         </h1>
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-row h-full w-full">
+      <div className="flex flex-row h-full w-full ">
         {/* Left Side - Icons */}
-        <div className="flex flex-col h-full items-center text-left p-6 gap-10 sm:gap-12 md:gap-14">
+        <div className="flex flex-col h-full items-center text-left p-6 gap-10 sm:gap-12 md:gap-14 ">
           <GlassIcons items={items} />
         </div>
 
        {/* Right Side - Spotify Card */}
-       <div className="w-full max-w-3xl mx-auto p-2 mt-10 flex flex-col">
+       <div className="w-full max-w-3xl mx-auto p-2 mt-10 flex flex-col group-hover:opacity-100 ">
         <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.45)] overflow-hidden">
-         
          {/* 🔥 Playlist Preview (Primary) */}
         <a
          href="https://open.spotify.com/playlist/0FNypq26NL5uuKXbWDDiaJ"
@@ -82,16 +112,13 @@ const items = [
         </div>
         </a>
 
-    {/* Divider */}
-    <div className="h-px bg-white/10" />
-
     {/* 🎧 Spotify Embed (Secondary) */}
     <div className="p-4 bg-black/40">
+      <Suspense fallback={<div className="text-xs text-white/40">Loading…</div>}>
       <SpotifyTrack />
+      </Suspense>
     </div>
 
-    {/* Divider */}
-    <div className="h-px bg-white/10" />
 
     {/* 🎬 GIF / Visual Teaser (Accent) */}
     <div className="p-4">
@@ -111,13 +138,11 @@ const items = [
         </div>
       </a>
     </div>
-
+    </div>
   </div>
 </div>
 
 
       </div>
-    </div>
 );
-};
-
+}

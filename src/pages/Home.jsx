@@ -1,4 +1,5 @@
 import React from "react";
+import { lazy, Suspense } from "react";
 import MagicBento from "../components/MagicBento"; // Adjust path as needed
 import {Description} from "../components/Description";
 import {ToolStack} from "../components/ToolStack";
@@ -6,12 +7,11 @@ import {LeetcodeSection} from "../components/LeetcodeSection";
 import {SkillsSection} from "../components/SkillsSection";
 import {LinksSection} from "../components/LinksSection";
 import { ContactSection } from "../components/ContactSection";
-import {ProjectsSection} from "../components/ProjectsSection";
-
+const ProjectsSection = lazy(()=>import ("../components/ProjectsSection"));
 import { ParticleCard } from "../components/MagicBento";
-import ActivityHeatmap from "../components/ActivityHeatmap";
+const ActivityHeatmap = lazy(() => import('../components/ActivityHeatmap'));
 import HomeStage from "./HomeStage";
-import Blogs from "../components/Blogs";
+const Blogs = lazy(() =>import('../components/Blogs'));
 
 function Home() {
   const glowColor = "243, 243, 243";
