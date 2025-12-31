@@ -39,7 +39,7 @@ export function Description() {
 
           {/* Right: Resume Button */}
           <a
-            href="/assets/Rishi_Lalwani_Resume.pdf"
+            href="/assets/Rishi_Lalwani_Resume (5).pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={buttonStyles.primary}

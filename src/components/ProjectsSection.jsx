@@ -1,81 +1,111 @@
-import { Home, Cpu, Music, LayoutGrid } from "lucide-react";
-import { typography, buttonStyles } from "../utils/designSystem";
+import { Home, Music, LayoutGrid } from "lucide-react";
+import { typography } from "../utils/designSystem";
 
 const PROJECTS = [
   {
     id: 1,
-    title: "StayFinder",
+    title: "CampTrek",
     description:
-      "Full-stack Airbnb-style platform with authentication, maps, cloud uploads, and reviews.",
+      "Full-stack campground platform with authentication, maps, reviews, and cloud image uploads.",
     icon: <Home className="w-4 h-4 text-violet-400" />,
-    stack: ["React", "Node", "MongoDB"],
+    stack: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Passport.js",
+      "Cloudinary",
+      "MapTiler",
+    ],
+    github: "https://github.com/yourusername/camptrek",
+    live: "https://camptrek.vercel.app",
   },
   {
     id: 2,
-    title: "Spotify Profile",
+    title: "Spotify Wrapped",
     description:
-      "Live Spotify profile with embeds, activity, and themed UI.",
+      "Spotify analytics dashboard with OAuth 2.0, live data visualization, and token refresh handling.",
     icon: <Music className="w-4 h-4 text-green-400" />,
-    stack: ["React", "API"],
+    stack: [
+      "React",
+      "Spotify API",
+      "OAuth 2.0",
+      "Node.js",
+      "Express",
+      "Vercel",
+    ],
+    github: "https://github.com/yourusername/spotify-wrapped",
+    live: "https://spotify-wrapped.vercel.app",
   },
   {
     id: 3,
-    title: "Bento Grid UI",
+    title: "Portfolio Platform",
     description:
-      "Experimental glassmorphism + motion-driven bento layout.",
+      "Interactive portfolio featuring a bento grid UI, motion effects, and live activity integrations.",
     icon: <LayoutGrid className="w-4 h-4 text-cyan-400" />,
-    stack: ["UI", "Motion"],
+    stack: [
+      "React",
+      "Tailwind",
+      "Framer Motion",
+      "REST APIs",
+      "EmailJS",
+    ],
+    github: "https://github.com/yourusername/portfolio",
+    live: "https://yourportfolio.vercel.app",
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <div className="w-full h-full px-5 py-5 flex flex-col">
+    <div className="w-full h-full px-6 py-6 flex flex-col justify-between">
 
       {/* Header */}
-      <div className="mb-4 text-center">
-        <h2 className={typography.h3}>Projects</h2>
+      <div className="mb-4">
+        <h2 className={`${typography.h3} text-center`}>
+          Projects
+        </h2>
       </div>
 
       {/* Horizontal strip */}
       <div
         className="
-          flex gap-4 w-full h-full
+          flex gap-4
+          w-full
           overflow-x-auto no-scrollbar
           snap-x snap-mandatory
-          pb-2
+          pb-1
         "
       >
         {PROJECTS.map((project) => (
-          <div
+          <article
             key={project.id}
-            className={`
+            className="
               snap-start
-              min-w-[240px]
-              rounded-xl
-              border
+              min-w-[260px]
+              max-w-[280px]
+              rounded-2xl
+              bg-white/5
+              border border-white/10
               p-4
+              flex flex-col justify-between
               transition-all duration-200
-              ${
-                project.featured
-                  ? "bg-white/10 border-white/20"
-                  : "bg-white/5 border-white/10"
-              }
               hover:bg-white/10
-            `}
+              hover:border-white/20
+            "
           >
             {/* Title */}
-            <div className="flex items-center gap-2 mb-2">
-              {project.icon}
-              <h3 className={`${typography.h4} leading-tight`}>
-                {project.title}
-              </h3>
-            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                {project.icon}
+                <h3 className={`${typography.h4} leading-tight`}>
+                  {project.title}
+                </h3>
+              </div>
 
-            {/* Description */}
-            <p className={`${typography.bodySmall} leading-relaxed line-clamp-3`}>
-              {project.description}
-            </p>
+              {/* Description */}
+              <p className="text-sm text-white/70 leading-relaxed line-clamp-3">
+                {project.description}
+              </p>
+            </div>
 
             {/* Stack */}
             <div className="mt-3 flex flex-wrap gap-2">
@@ -83,36 +113,53 @@ export default function ProjectsSection() {
                 <span
                   key={tech}
                   className="
-                    px-2 py-0.5 rounded-full
-                    text-[10px] text-white/50
-                    bg-white/5 border border-white/10
+                    px-2 py-0.5
+                    rounded-full
+                    text-[10px]
+                    text-white/50
+                    bg-white/5
+                    border border-white/10
                   "
                 >
                   {tech}
                 </span>
               ))}
             </div>
-          </div>
-        ))}
 
-        {/* View more */}
-        <div
-          className="
-            snap-start
-            min-w-[180px]
-            rounded-xl
-            border border-dashed border-white/20
-            flex items-center justify-center
-            text-xs text-white/50
-            hover:text-white
-            hover:border-white/30
-            transition
-          "
-        >
-          <span className="flex items-center gap-1">
-            View all projects →
-          </span>
-        </div>
+            {/* Links */}
+            <div className="mt-4 flex gap-4 text-[11px]">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    text-white/60
+                    hover:text-white
+                    transition
+                  "
+                >
+                  GitHub
+                </a>
+              )}
+
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    text-white/60
+                    hover:text-white
+                    transition
+                  "
+                >
+                  Live Demo →
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   );
