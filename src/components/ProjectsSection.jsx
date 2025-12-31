@@ -16,8 +16,8 @@ const PROJECTS = [
       "Cloudinary",
       "MapTiler",
     ],
-    github: "https://github.com/yourusername/camptrek",
-    live: "https://camptrek.vercel.app",
+    github: "https://github.com/Darkshadow-123/CampTrek-main",
+    live: "https://camp-trek-main.vercel.app",
   },
   {
     id: 2,
@@ -33,8 +33,8 @@ const PROJECTS = [
       "Express",
       "Vercel",
     ],
-    github: "https://github.com/yourusername/spotify-wrapped",
-    live: "https://spotify-wrapped.vercel.app",
+    github: "https://github.com/Darkshadow-123/Spotify-Wrapped",
+    live: "https://spotify-wrapped-chi.vercel.app/",
   },
   {
     id: 3,
@@ -49,8 +49,8 @@ const PROJECTS = [
       "REST APIs",
       "EmailJS",
     ],
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://yourportfolio.vercel.app",
+    github: "https://github.com/Darkshadow-123/Portfolio_BentoGrid",
+    live: "https://portfolio-bento-grid-sand.vercel.app",
   },
 ];
 
