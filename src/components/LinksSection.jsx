@@ -3,11 +3,11 @@ import Dock from './Dock';
 import { typography } from "../utils/designSystem";
 import RotatingText from "./RotatingText";
   const items = [
-    { icon: <Instagram size={18} color="white" />, label: 'Instagram', onClick: () => alert('Instagram!') },
-    { icon: <Github size={18} color="white" />, label: 'Github', onClick: () => alert('Github!') },
-    { icon: <Linkedin size={18} color="white" />, label: 'LinkedIn', onClick: () => alert('LinkedIn!') },
-    { icon: <Twitter size={18} color="white" />, label: 'Twitter', onClick: () => alert('Twitter!') },
-    { icon: <Mail size={18} color="white" />, label: 'Mail', onClick: () => alert('Mail!') },
+    { icon: <Instagram size={18} color="white" />, label: 'Instagram', onClick: () => window.open("https://instagram.com/rishi.lalwani_", "_blank") },
+    { icon: <Github size={18} color="white" />, label: 'Github', onClick: () => window.open("https://github.com/Darkshadow-123", "_blank") },
+    { icon: <Linkedin size={18} color="white" />, label: 'LinkedIn', onClick: () => window.open("https://www.linkedin.com/in/rishi-lalwani-803569232", "_blank") },
+    { icon: <Twitter size={18} color="white" />, label: 'Twitter', onClick: () => window.open("https://twitter.com/RishiLalwani17", "_blank") },
+    { icon: <Mail size={18} color="white" />, label: 'Mail', onClick: () => window.open("mailto:rishi.123.lalwani@gmail.com", "_blank") },
   ];
 export function LinksSection() {
   return (
