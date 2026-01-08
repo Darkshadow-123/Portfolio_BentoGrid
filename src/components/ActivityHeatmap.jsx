@@ -30,12 +30,26 @@ const ActivityHeatmap = () => {
       fetch(`https://alfa-leetcode-api.onrender.com/${LEETCODE_USER}/calendar`)
         .then((res) => res.json())
         .then((data) => {
-          const raw = JSON.parse(data.submissionCalendar);
-          const parsed = Object.entries(raw).map(([ts, count]) => ({
-            date: new Date(Number(ts) * 1000).toISOString().split("T")[0],
-            count,
-          }));
-          setData(parsed);
+          try {
+            let raw = data.submissionCalendar;
+            if (typeof raw === "string") {
+              raw = JSON.parse(raw);
+            }
+            const parsed = Object.entries(raw || {}).map(([ts, count]) => ({
+              date: new Date(Number(ts) * 1000).toISOString().split("T")[0],
+              count,
+            }));
+            setData(parsed);
+          } catch (err) {
+            console.error("Failed parsing LeetCode calendar:", err, data);
+            setData([]);
+          } finally {
+            setLoading(false);
+          }
+        })
+        .catch((err) => {
+          console.error("LeetCode fetch error:", err);
+          setData([]);
           setLoading(false);
         });
     }
@@ -44,11 +58,22 @@ const ActivityHeatmap = () => {
       fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}`)
         .then((res) => res.json())
         .then((data) => {
-          const parsed = data.contributions.map((item) => ({
-            date: item.date,
-            count: item.count,
-          }));
-          setData(parsed);
+          try {
+            const parsed = (data.contributions || []).map((item) => ({
+              date: item.date,
+              count: item.count,
+            }));
+            setData(parsed);
+          } catch (err) {
+            console.error("Failed parsing GitHub contributions:", err, data);
+            setData([]);
+          } finally {
+            setLoading(false);
+          }
+        })
+        .catch((err) => {
+          console.error("GitHub fetch error:", err);
+          setData([]);
           setLoading(false);
         });
     }

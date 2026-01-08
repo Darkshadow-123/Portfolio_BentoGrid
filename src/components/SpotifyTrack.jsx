@@ -14,7 +14,6 @@ const SpotifyTrack = ({
         src={`https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=${theme}`}
         width={width}
         height={height}
-        frameBorder="0"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
       />
