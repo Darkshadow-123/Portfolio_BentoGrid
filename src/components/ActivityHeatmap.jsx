@@ -13,8 +13,8 @@ const HEATMAP_RANGES = {
     end: new Date("2025-09-31"),
   },
   github: {
-    start: new Date("2025-09-01"),
-    end: new Date("2025-12-31"),
+    start: new Date("2025-10-01"),
+    end: new Date("2026-01-31"),
   },
 };
 
