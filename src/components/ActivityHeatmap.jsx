@@ -7,14 +7,18 @@ import { typography, buttonStyles } from "../utils/designSystem";
 const LEETCODE_USER =import.meta.env.VITE_LEETCODE_USER
 const GITHUB_USER =import.meta.env.VITE_GITHUB_USER
 
+const today = new Date();
+const fourMonthsAgo = new Date(today);
+fourMonthsAgo.setMonth(today.getMonth() - 4);
+
 const HEATMAP_RANGES = {
   leetcode: {
-    start: new Date("2025-06-01"),
-    end: new Date("2025-09-31"),
+    start: fourMonthsAgo,
+    end: today,
   },
   github: {
-    start: new Date("2025-10-01"),
-    end: new Date("2026-01-31"),
+    start: fourMonthsAgo,
+    end: today,
   },
 };
 

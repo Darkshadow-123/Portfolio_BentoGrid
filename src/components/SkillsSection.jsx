@@ -13,42 +13,38 @@ export function SkillsSection() {
       [mask-image:linear-gradient(to_bottom,transparent,black_4%,black_96%,transparent)]
       [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_4%,black_96%,transparent)]">
         
-         <SkillBlock
+        <SkillBlock
           title="Languages"
           skills={[
             "C++",
+            "CSS",
+            "HTML",
             "JavaScript",
+            "TypeScript",
           ]}
         />
 
         <SkillBlock
-          title="Frontend"
+          title="CS Fundamentals"
+          skills={[
+            "DSA",
+            "OOPS",
+          ]}
+        />
+
+        <SkillBlock
+          title="Frameworks & Databases"
           skills={[
             "React.js",
-            "Tailwind CSS",
-            "Framer Motion",
-            "Recharts",
-            "React Router"
-          ]}
-        />
-
-        <SkillBlock
-          title="Backend"
-          skills={[
-            "Node.js",
+            "Next.js",
             "Express.js",
-            "REST APIs",
-            "Passport.js"
-          ]}
-        />
-
-        <SkillBlock
-          title="Databases & Services"
-          skills={[
+            "Node.js",
+            "Bootstrap",
+            "Tailwind CSS",
             "MongoDB",
-            "Cloudinary",
-            "MapTiler",
-            "EmailJS"
+            "PostgreSQL",
+            "Redis",
+            "Upstash",
           ]}
         />
 
@@ -57,10 +53,11 @@ export function SkillsSection() {
           skills={[
             "Git",
             "GitHub",
+            "REST API",
             "Postman",
             "Vercel",
+            "Render",
             "VS Code",
-            "Figma"
           ]}
         />
       </div>

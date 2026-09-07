@@ -28,16 +28,15 @@ export function LinksSection() {
 
 
         {/* Status + Activity */}
-        {/* Status + Activity */}
         <div className="flex flex-col items-center gap-2">
           <div className="flex flex-col items-center gap-2 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur text-xl text-white/60 tracking-wide">
           <div className="opacity-60">  Currently building  </div>
           <div>
             <RotatingText texts={[
-            "Interactive UI",
-            "API-Driven UI",
-            "Auth Systems",
+            "Full-Stack Apps",
+            "AI-Powered UI",
             "Cloud Integrations",
+            "Redis Caching",
             "Performance UI"
           ]}
           mainClassName="

@@ -28,11 +28,6 @@ const items = [
     label: "YouTube"
   },
   {
-    icon: <ToolIcon src="/assets/googlechrome.svg" alt="Chrome" />,
-    color: "transparent",
-    label: "Chrome"
-  },
-  {
     icon: <ToolIcon src="/assets/leetcode.svg" alt="LeetCode" />,
     color: "transparent",
     label: "LeetCode"
@@ -41,6 +36,21 @@ const items = [
     icon: <ToolIcon src="/assets/github.svg" alt="GitHub" />,
     color: "transparent",
     label: "GitHub"
+  },
+  {
+    icon: <ToolIcon src="/assets/claude.svg" alt="Claude" />,
+    color: "transparent",
+    label: "Claude"
+  },
+  {
+    icon: <ToolIcon src="/assets/spotify.svg" alt="Spotify" />,
+    color: "transparent",
+    label: "Spotify"
+  },
+  {
+    icon: <ToolIcon src="\assets\visualstudiocode.svg" alt="VS Code" />,
+    color: "transparent",
+    label: "VS Code"
   }
 ];
 
@@ -129,12 +139,16 @@ export function ToolStack(){
         className="block"
       >
         <div className="group w-full max-w-md mx-auto aspect-video rounded-xl overflow-hidden bg-black shadow-lg">
-          <img
-            src="/assets/WhatsApp Video 2025-12-17 at 2.07.49 AM (1).gif"
-            alt="Playlist Preview"
-            loading="lazy"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 motion-reduce:transform-none"
-          />
+          >
+            <source src="/assets/locked-in.mp4" type="video/mp4" />
+          </video>
         </div>
       </a>
     </div>

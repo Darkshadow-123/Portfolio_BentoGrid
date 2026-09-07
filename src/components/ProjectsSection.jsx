@@ -1,9 +1,26 @@
-import { Home, Music, LayoutGrid } from "lucide-react";
+import { Home, Music, LayoutGrid, Film } from "lucide-react";
 import { typography } from "../utils/designSystem";
 
 const PROJECTS = [
   {
     id: 1,
+    title: "Movie Insights",
+    description:
+  "AI-powered movie insights app with a 3-tier Redis caching layer, cutting cold-start latency 13.5x and AI costs by 99%.",
+    icon: <Film className="w-4 h-4 text-amber-400" />,
+    stack: [
+      "Next.js",
+      "React 19",
+      "TypeScript",
+      "Redis",
+      "Gemini AI API",
+      "OMDb API",
+    ],
+    github: "https://github.com/Darkshadow-123/movie-insights",
+    live: "https://movie-insights-seven.vercel.app/",
+  },
+  {
+    id: 2,
     title: "CampTrek",
     description:
       "Full-stack campground platform with authentication, maps, reviews, and cloud image uploads.",
@@ -20,7 +37,7 @@ const PROJECTS = [
     live: "https://camp-trek-main.vercel.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "Spotify Wrapped",
     description:
       "Spotify analytics dashboard with OAuth 2.0, live data visualization, and token refresh handling.",
@@ -35,22 +52,6 @@ const PROJECTS = [
     ],
     github: "https://github.com/Darkshadow-123/Spotify-Wrapped",
     live: "https://spotify-wrapped-chi.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Portfolio Platform",
-    description:
-      "Interactive portfolio featuring a bento grid UI, motion effects, and live activity integrations.",
-    icon: <LayoutGrid className="w-4 h-4 text-cyan-400" />,
-    stack: [
-      "React",
-      "Tailwind",
-      "Framer Motion",
-      "REST APIs",
-      "EmailJS",
-    ],
-    github: "https://github.com/Darkshadow-123/Portfolio_BentoGrid",
-    live: "https://portfolio-bento-grid-sand.vercel.app",
   },
 ];
 
@@ -102,7 +103,7 @@ export default function ProjectsSection() {
               </div>
 
               {/* Description */}
-              <p className="text-sm text-white/70 leading-relaxed line-clamp-3">
+              <p className="text-sm text-white/70 leading-relaxed line-clamp-4">
                 {project.description}
               </p>
             </div>
